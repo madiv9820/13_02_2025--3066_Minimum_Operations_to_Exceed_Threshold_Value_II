@@ -8,6 +8,7 @@ class UnitTest(unittest.TestCase):
         self.__testcases = {
             "default_testcase_1": ([2,11,10,1,3], 10, 2),
             "default_testcase_2": ([1,1,2,4,9], 20, 4),
+            "default_testcase_3": ([999999999,999999999,999999999], 1000000000, 2),
             "basic_case": ([1,2], 5, 1),
             "already_satisfied": ([5,10,15], 5, 0),
             "multiple_operations_required": ([1,3,5,7], 20, 3),
@@ -27,6 +28,11 @@ class UnitTest(unittest.TestCase):
     @timeout(0.5)
     def test_case_default_testcase_2(self):
         nums, k, expected = self.__testcases["default_testcase_2"]
+        output = self.__solution.minOperations(nums = nums, k = k)
+        self.assertEqual(output, expected)
+    @timeout(0.5)
+    def test_case_default_testcase_3(self):
+        nums, k, expected = self.__testcases["default_testcase_3"]
         output = self.__solution.minOperations(nums = nums, k = k)
         self.assertEqual(output, expected)
     @timeout(0.5)

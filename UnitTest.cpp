@@ -26,6 +26,13 @@ private:
         
         cout << "test_case_default_testcase_2: " << ((result == output) ? "passed":"failed") << endl;
     }
+    void test_case_default_testcase_3() {
+        vector<int>& nums = testcases["default_testcase_3"].nums;
+        int k = testcases["default_testcase_3"].k, output = testcases["default_testcase_3"].output;
+        int result = solution.minOperations(nums = nums, k = k);
+        
+        cout << "test_case_default_testcase_3: " << ((result == output) ? "passed":"failed") << endl;
+    }
     void test_case_basic_case() {
         vector<int>& nums = testcases["basic_case"].nums;
         int k = testcases["basic_case"].k, output = testcases["basic_case"].output;
@@ -87,6 +94,7 @@ public:
         testcases = {
             {"default_testcase_1", {{2,11,10,1,3}, 10, 2}},
             {"default_testcase_2", {{1,1,2,4,9}, 20, 4}},
+            {"default_testcase_3", {{999999999,999999999,999999999}, 1000000000, 2}},
             {"basic_case", {{1,2}, 5, 1}},
             {"already_satisfied", {{5,10,15}, 5, 0}},
             {"multiple_operations_required", {{1,3,5,7}, 20, 3}},
@@ -100,6 +108,7 @@ public:
     void test() {
         test_case_default_testcase_1();
         test_case_default_testcase_2();
+        test_case_default_testcase_3();
         test_case_basic_case();
         test_case_already_satisfied();
         test_case_multiple_operations_required();
