@@ -90,11 +90,11 @@ public:
             {"basic_case", {{1,2}, 5, 1}},
             {"already_satisfied", {{5,10,15}, 5, 0}},
             {"multiple_operations_required", {{1,3,5,7}, 20, 3}},
-            {"large_numbers", {{100,200,300,400}, 1000, 4}},
+            {"large_numbers", {{100,200,300,400}, 1000, 3}},
             {"smallest_possible_input", {{1,1}, 3, 1}},
-            {"large_k_value", {{10,15,20}, 1000, 7}},
+            {"large_k_value", {{10,15,20}, 1000, 2}},
             {"same_numbers", {{5,5,5,5}, 20, 3}},
-            {"sorted_array", {{1,2,3,4,5}, 10, 2}}
+            {"sorted_array", {{1,2,3,4,5}, 10, 3}}
         };
     }
     void test() {
@@ -110,3 +110,8 @@ public:
         test_case_sorted_array();
     }
 };
+
+int main() {
+    UnitTest test;
+    test.test();
+}
